@@ -1,13 +1,19 @@
 ---
 layout: layouts/base.njk
-title: Blank Slate v2
-description: My cool webpage.
+title: Books!
+description: Search for books at your local library (and other places)
 ---
 
-<h1>Hello, world!</h1>
+<h1>{{ title }}</h1>
 
 <ul>
-     {% for item in list.items %}
-     <li>{{ item.name | markdown | safe }}</li>
+     {% for item in sources.items %}
+     <li>
+         {{ item.name }}
+         <form action="{{ item.action }}" method="{{ item.method }}">
+             <input type="text" name="{{ item.field }}" />
+             <button>Search</button>
+         </form>
+     </li>
      {% endfor %}
 </ul>
