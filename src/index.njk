@@ -9,9 +9,13 @@ description: Search for books at your local library (and other places)
 <ul>
      {% for item in sources.items %}
      <li>
+         {% if item.url %}
+         <a href="{{ item.url }}">{{ item.name }}</a>
+         {% else %}
          {{ item.name }}
-         <form action="{{ item.action }}" method="{{ item.method }}">
-             <input type="text" name="{{ item.field }}" />
+         {% endif %}
+         <form action="{{ item.action }}" method="{{ item.method | default('get') }}">
+             <input type="text" name="{{ item.field | default('q') }}" />
              <button>Search</button>
          </form>
      </li>

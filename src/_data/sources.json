@@ -2,15 +2,13 @@
     "items": [
         {
             "name": "SAILS Library Network",
-            "action": "https://sails.ent.sirsi.net/client/en_US/default/search/results",
-            "field": "q",
-            "method": "get"
+            "url": "https://sails.ent.sirsi.net/client/en_US/default/",
+            "action": "https://sails.ent.sirsi.net/client/en_US/default/search/results"
         },
         {
             "name": "Goodreads",
-            "action": "https://www.goodreads.com/search",
-            "field": "q",
-            "method": "get"
+            "url": "https://www.goodreads.com/",
+            "action": "https://www.goodreads.com/search"
         }
     ]
 }
