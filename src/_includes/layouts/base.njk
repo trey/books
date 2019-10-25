@@ -7,9 +7,24 @@
     <meta name="description" content="{{ description }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/vendor/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="wrapper">{{ content | safe }}</div>
+
+    <script>
+        $('html').addClass('has-js');
+
+        $('form.js').submit((e) => {
+            e.preventDefault();
+            const $baseForm = $(e.target);
+            const query = $baseForm.find('input[name=q]').val();
+            const source = $baseForm.find('input[name=source]:checked').val();
+            const $form = $('#form_' + source);
+            $form.find('input[type=search]').val(query);
+            $form.submit();
+        });
+    </script>
 </body>
 </html>

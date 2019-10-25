@@ -11,3 +11,20 @@ body {
 }
 
 code { background: darken($body-color, 10%); }
+
+ul {
+    list-style: none;
+    padding: 0;
+
+    li + li { margin-top: 1rem; }
+
+    form { padding-top: 0.5rem; }
+}
+
+.js { display: none; }
+
+html.has-js {
+    .js { display: block; }
+
+    .no-js { display: none; }
+}

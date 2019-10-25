@@ -6,7 +6,24 @@ description: Search for books at your local library (and other places)
 
 <h1>{{ title }}</h1>
 
-<ul>
+<form class="js">
+    <ul>
+        {% for item in sources.items %}
+        <li>
+            <label>
+                <input type="radio" name="source" value="{{ item.slug }}" {% if loop.first %}checked="checked"{% endif %} />
+                {{ item.name }}
+            </label>
+        </li>
+        {% endfor %}
+    </ul>
+    <div>
+        <input type="search" name="q" />
+        <button>Search</button>
+    </div>
+</form>
+
+<ul class="no-js">
      {% for item in sources.items %}
      <li>
          {% if item.url %}
@@ -14,8 +31,8 @@ description: Search for books at your local library (and other places)
          {% else %}
          {{ item.name }}
          {% endif %}
-         <form action="{{ item.action }}" method="{{ item.method | default('get') }}">
-             <input type="text" name="{{ item.field | default('q') }}" />
+         <form id="form_{{ item.slug }}" action="{{ item.action }}" method="{{ item.method | default('get') }}">
+             <input type="search" name="{{ item.field | default('q') }}" />
              <button>Search</button>
          </form>
      </li>
