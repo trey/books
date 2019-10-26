@@ -1,6 +1,8 @@
-# Blank Slate v2
+# Book Search
 
-Start a fresh website using [11ty](https://www.11ty.io) to do a bunch of stuff. Most importantly, this [compiles Sass](https://twitter.com/eleven_ty/status/1154938800885420032) and automatically refreshes the browser when you make changes!
+A little, personal search engine homepage based on [Blank2](https://github.com/trey/blank2).
+
+https://books.trey.cc
 
 ## To get set up:
 
@@ -9,7 +11,8 @@ Start a fresh website using [11ty](https://www.11ty.io) to do a bunch of stuff. 
 3. `npx @11ty/eleventy --serve`
 4. See it running at http://localhost:8080
 
-## To make changes and publish:
+## To add a new search:
 
-1. Edit files in `src`.
-2. Set your host to serve things from `dist`.
+1. Visit the site you want to search.
+2. Inspect the search `<form>` and copy the value of its `action` attribute.
+3. Put that along with whatever other information you want to display in a new item in `/src/_data/sources.json`.
