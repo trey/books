@@ -32,6 +32,9 @@ description: Search for books at your local library (and other places)
          {{ item.name }}
          {% endif %}
          <form id="form_{{ item.slug }}" action="{{ item.action }}" method="{{ item.method | default('get') }}">
+             {% if item.slug == 'indiebound' %}
+             <input type="hidden" name="aff" value="trey" />
+             {% endif %}
              <input type="search" name="{{ item.field | default('q') }}" />
              <button>Search</button>
          </form>

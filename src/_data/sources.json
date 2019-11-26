@@ -11,6 +11,13 @@
             "slug": "goodreads",
             "url": "https://www.goodreads.com/",
             "action": "https://www.goodreads.com/search"
+        },
+        {
+            "name": "IndieBound",
+            "slug": "indiebound",
+            "url": "https://www.indiebound.org/",
+            "action": "https://www.indiebound.org/search/book",
+            "field": "keys"
         }
     ]
 }
