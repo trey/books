@@ -22,6 +22,6 @@
         "name": "WorldCat",
         "slug": "worldcat",
         "url": "https://www.worldcat.org/",
-        "action": "https://www.worldcat.org/search"
+        "action": "https://www.worldcat.org/search?fq=x0%3Abook&qt=advanced&dblist=638#x0%253Abook-%2C%2528x0%253Abook%2Bx4%253Aprintbook%2529format"
     }
 ]
