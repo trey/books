@@ -19,6 +19,8 @@
     <script>
         $('html').removeClass('no-js').addClass('has-js');
 
+        $('form.js input').focus();
+
         $('form.js').submit((e) => {
             e.preventDefault();
             const $baseForm = $(e.target);
