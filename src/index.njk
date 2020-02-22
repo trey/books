@@ -8,11 +8,11 @@ description: Search for books at your local library (and other places)
 
 <form class="js">
     <ul>
-        {% for item in sources.items %}
+        {% for source in sources %}
         <li>
             <label>
-                <input type="radio" name="source" value="{{ item.slug }}" {% if loop.first %}checked="checked"{% endif %} />
-                {{ item.name }}
+                <input type="radio" name="source" value="{{ source.slug }}" {% if loop.first %}checked="checked"{% endif %} />
+                {{ source.name }}
             </label>
         </li>
         {% endfor %}
@@ -24,18 +24,18 @@ description: Search for books at your local library (and other places)
 </form>
 
 <ul class="no-js">
-     {% for item in sources.items %}
+     {% for source in sources %}
      <li>
-         {% if item.url %}
-         <a href="{{ item.url }}">{{ item.name }}</a>
+         {% if source.url %}
+         <a href="{{ source.url }}">{{ source.name }}</a>
          {% else %}
-         {{ item.name }}
+         {{ source.name }}
          {% endif %}
-         <form id="form_{{ item.slug }}" action="{{ item.action }}" method="{{ item.method | default('get') }}">
-             {% if item.slug == 'indiebound' %}
+         <form id="form_{{ source.slug }}" action="{{ source.action }}" method="{{ source.method | default('get') }}">
+             {% if source.slug == 'indiebound' %}
              <input type="hidden" name="aff" value="trey" />
              {% endif %}
-             <input type="search" name="{{ item.field | default('q') }}" />
+             <input type="search" name="{{ source.field | default('q') }}" />
              <button>Search</button>
          </form>
      </li>
