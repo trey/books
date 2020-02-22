@@ -17,5 +17,11 @@
         "url": "https://www.indiebound.org/",
         "action": "https://www.indiebound.org/search/book",
         "field": "keys"
+    },
+    {
+        "name": "WorldCat",
+        "slug": "worldcat",
+        "url": "https://www.worldcat.org/",
+        "action": "https://www.worldcat.org/search"
     }
 ]
