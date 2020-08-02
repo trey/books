@@ -19,6 +19,13 @@
         "field": "keys"
     },
     {
+        "name": "Bookshop",
+        "slug": "bookshop",
+        "url": "https://bookshop.org/",
+        "action": "https://bookshop.org/books",
+        "field": "keywords"
+    },
+    {
         "name": "WorldCat",
         "slug": "worldcat",
         "url": "https://www.worldcat.org/",
