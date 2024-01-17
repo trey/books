@@ -1,22 +1,25 @@
 [
     {
-        "name": "SAILS Library Network",
-        "slug": "sails",
-        "url": "https://sails.ent.sirsi.net/client/en_US/default/",
-        "action": "https://sails.ent.sirsi.net/client/en_US/default/search/results"
+        "name": "Strafford Library",
+        "slug": "morrill",
+        "url": "https://opac.libraryworld.com/opac/signin.php?libraryname=Morrill%20Memorial%20Library",
+        "action": "https://opac.libraryworld.com/opac/signin.php?libraryname=Morrill%20Memorial%20Library",
+        "field": "term",
+        "method": "post"
+    },
+    {
+        "name": "Norwich Bookstore",
+        "slug": "norwich",
+        "url": "https://www.norwichbookstore.com/",
+        "action": "https://www.norwichbookstore.com/search/apachesolr_search",
+        "field": "keys",
+        "method": "post"
     },
     {
         "name": "Goodreads",
         "slug": "goodreads",
         "url": "https://www.goodreads.com/",
         "action": "https://www.goodreads.com/search"
-    },
-    {
-        "name": "IndieBound",
-        "slug": "indiebound",
-        "url": "https://www.indiebound.org/",
-        "action": "https://www.indiebound.org/search/book",
-        "field": "keys"
     },
     {
         "name": "Bookshop",
