@@ -16,6 +16,13 @@
         "method": "post"
     },
     {
+        "name": "Kobo",
+        "slug": "kobo",
+        "url": "https://www.kobo.com/",
+        "action": "https://www.kobo.com/us/en/search",
+        "field": "query"
+    },
+    {
         "name": "Goodreads",
         "slug": "goodreads",
         "url": "https://www.goodreads.com/",
