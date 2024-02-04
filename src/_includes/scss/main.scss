@@ -6,8 +6,45 @@ html { font-size: 16px; }
 
 body {
     background: $body-color;
+    color: $text-color;
     font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     padding: 1rem 2rem;
+}
+
+a {
+    color: $text-color;
+
+    &:hover {
+        color: $body-color;
+        background: $text-color;
+    }
+}
+
+.form-wrapper {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+
+    button {
+        padding: 0 1rem;
+        border-radius: 0.5rem;
+        border: none;
+        background: $text-color;
+        color: $body-color;
+        cursor: pointer;
+
+        &:hover {
+            background: lighten($body-color, 20%);
+            color: $text-color;
+        }
+    }
+
+    input[type=search] {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: none;
+        max-width: 12rem;
+    }
 }
 
 code { background: darken($body-color, 10%); }
