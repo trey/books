@@ -40,5 +40,12 @@
         "slug": "worldcat",
         "url": "https://www.worldcat.org/",
         "action": "https://www.worldcat.org/search?fq=x0%3Abook&qt=advanced&dblist=638#x0%253Abook-%2C%2528x0%253Abook%2Bx4%253Aprintbook%2529format"
+    },
+    {
+        "name": "Wikipedia",
+        "slug": "wikipedia",
+        "url": "https://en.wikipedia.org/",
+        "action": "https://en.wikipedia.org/w/index.php?search",
+        "field": "search"
     }
 ]
