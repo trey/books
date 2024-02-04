@@ -7,25 +7,25 @@
     <meta name="description" content="{{ description }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="/css/main.css" />
-    <script src="/js/vendor/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="wrapper">{{ content | safe }}</div>
 
     <script>
-        $('html').removeClass('no-js').addClass('has-js');
+        document.querySelector('html').classList.remove('no-js');
+        document.querySelector('html').classList.add('has-js');
 
-        $('form.js input').focus();
+        document.querySelector('form.js input').focus();
 
-        $('form.js').submit((e) => {
+        document.querySelector('form.js').addEventListener('submit', (e) => {
             e.preventDefault();
-            const $baseForm = $(e.target);
-            const query = $baseForm.find('input[name=q]').val();
-            const source = $baseForm.find('input[name=source]:checked').val();
-            const $form = $('#form_' + source);
-            $form.find('input[type=search]').val(query);
-            $form.submit();
+            const baseForm = e.target;
+            const query = baseForm.querySelector('input[name=q]').value;
+            const source = baseForm.querySelector('input[name=source]:checked').value;
+            const form = document.querySelector('#form_' + source);
+            form.querySelector('input[type=search]').value = query;
+            form.submit();
         });
     </script>
 </body>
