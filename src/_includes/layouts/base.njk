@@ -16,7 +16,24 @@
         document.querySelector('html').classList.remove('no-js');
         document.querySelector('html').classList.add('has-js');
 
-        document.querySelector('form.js input').focus();
+        // Restore selected source and query from localStorage
+        const selectedSource = localStorage.getItem('tp-selectedSource');
+        const query = localStorage.getItem('tp-query');
+
+            const radio = document.querySelector(`input[name=source][value=${selectedSource}]`);
+            if (radio) {
+                radio.checked = true;
+            } else {
+                // Select the first option
+                document.querySelectorAll('input[name=source]')[0].checked = true;
+            }
+
+            const input = document.querySelector('input[name=q]');
+            if (input) {
+                input.value = query;
+            }
+
+        document.querySelector('form.js input[name=q]').focus();
 
         document.querySelector('form.js').addEventListener('submit', (e) => {
             e.preventDefault();
@@ -26,6 +43,10 @@
             const form = document.querySelector('#form_' + source);
             form.querySelector('input[type=search]').value = query;
             form.submit();
+
+            // Save selected source and query in localStorage
+            localStorage.setItem('tp-selectedSource', source);
+            localStorage.setItem('tp-query', query);
         });
     </script>
 </body>

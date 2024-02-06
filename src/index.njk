@@ -9,14 +9,14 @@ description: Search for books at your local library (and other places)
         {% for source in sources %}
         <li>
             <label>
-                <input type="radio" name="source" value="{{ source.slug }}" {% if loop.first %}checked="checked"{% endif %} />
+                <input type="radio" name="source" value="{{ source.slug }}">
                 {{ source.name }}
             </label>
         </li>
         {% endfor %}
     </ul>
     <div class="form-wrapper">
-        <input type="search" name="q" />
+        <input type="search" name="q">
         <button>Search</button>
     </div>
 </form>
@@ -30,10 +30,7 @@ description: Search for books at your local library (and other places)
          {{ source.name }}
          {% endif %}
          <form id="form_{{ source.slug }}" action="{{ source.action }}" method="{{ source.method | default('get') }}">
-             {% if source.slug == 'indiebound' %}
-             <input type="hidden" name="aff" value="trey" />
-             {% endif %}
-             <input type="search" name="{{ source.field | default('q') }}" />
+             <input type="search" name="{{ source.field | default('q') }}">
              <button>Search</button>
          </form>
      </li>
