@@ -23,6 +23,13 @@
         "field": "query"
     },
     {
+        "name": "The StoryGraph",
+        "slug": "storygraph",
+        "url": "https://app.thestorygraph.com/",
+        "action": "https://app.thestorygraph.com/browse",
+        "field": "search_term"
+    },
+    {
         "name": "Goodreads",
         "slug": "goodreads",
         "url": "https://www.goodreads.com/",
