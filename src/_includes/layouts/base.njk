@@ -18,20 +18,23 @@
 
         // Restore selected source and query from localStorage
         const selectedSource = localStorage.getItem('tp-selectedSource');
-        const query = localStorage.getItem('tp-query');
 
-            const radio = document.querySelector(`input[name=source][value=${selectedSource}]`);
-            if (radio) {
-                radio.checked = true;
-            } else {
-                // Select the first option
-                document.querySelectorAll('input[name=source]')[0].checked = true;
-            }
+        const urlParams = new URLSearchParams(window.location.search);
+        const q = urlParams.get('q');
+        const query = q ? q : localStorage.getItem('tp-query');
 
-            const input = document.querySelector('input[name=q]');
-            if (input) {
-                input.value = query;
-            }
+        const radio = document.querySelector(`input[name=source][value=${selectedSource}]`);
+        if (radio) {
+            radio.checked = true;
+        } else {
+            // Select the first option
+            document.querySelectorAll('input[name=source]')[0].checked = true;
+        }
+
+        const input = document.querySelector('input[name=q]');
+        if (input) {
+            input.value = query;
+        }
 
         document.querySelector('form.js input[name=q]').focus();
 
