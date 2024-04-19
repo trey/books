@@ -11,9 +11,8 @@
         "name": "Norwich Bookstore",
         "slug": "norwich",
         "url": "https://www.norwichbookstore.com/",
-        "action": "https://www.norwichbookstore.com/search/apachesolr_search",
-        "field": "keys",
-        "method": "post"
+        "action": "https://www.norwichbookstore.com/browse/",
+        "field": "qs"
     },
     {
         "name": "Kobo",
