@@ -1,2 +1,8 @@
 [build]
   ignore = "git log -1 --pretty=%B | grep dependabot"
+
+[[redirects]]
+  from = "https://trey-books.netlify.app"
+  to = "https://books.treypiepmeier.com"
+  status = 301
+  force = true
