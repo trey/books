@@ -1,23 +1,24 @@
+@use "sass:color";
 // http://thesassway.com/beginner/how-to-structure-a-sass-project
-@import 'partials/reset';
-@import 'modules/colors';
+@use 'partials/reset';
+@use 'modules/colors';
 
 html { font-size: 16px; }
 
 body {
-    background: $body-color;
-    color: $text-color;
+    background: colors.$body-color;
+    color: colors.$text-color;
     font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: large;
     padding: 1rem 2rem;
 }
 
 a {
-    color: $text-color;
+    color: colors.$text-color;
 
     &:hover {
-        color: $body-color;
-        background: $text-color;
+        color: colors.$body-color;
+        background: colors.$text-color;
     }
 }
 
@@ -40,12 +41,12 @@ form.js {
         }
 
         &:hover {
-            background: lighten($body-color, 10%);
+            background: color.adjust(colors.$body-color, $lightness: 10%);
         }
     }
 
     li label {
-        background: darken($body-color, 2%);
+        background: color.adjust(colors.$body-color, $lightness: -2%);
     }
 
     li label:has(input[type="radio"]:checked) {
@@ -65,13 +66,13 @@ form.js {
         padding: 0 1rem;
         border-radius: 0.5rem;
         border: none;
-        background: $text-color;
-        color: $body-color;
+        background: colors.$text-color;
+        color: colors.$body-color;
         cursor: pointer;
 
         &:hover {
-            background: lighten($body-color, 20%);
-            color: $text-color;
+            background: color.adjust(colors.$body-color, $lightness: 20%);
+            color: colors.$text-color;
         }
     }
 
@@ -84,7 +85,7 @@ form.js {
     }
 }
 
-code { background: darken($body-color, 10%); }
+code { background: color.adjust(colors.$body-color, $lightness: -10%); }
 
 ul {
     list-style: none;
