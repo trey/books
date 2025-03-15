@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .js { display: none; }
+
+  html.has-js {
+    .js { display: block; }
+
+    .no-js { display: none; }
+  }
+
+  li label {
+    background: var(--color-sky-200);
+    color: var(--color-black);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--color-sky-300);
+
+      @variant dark {
+        background: var(--color-sky-600);
+      }
+    }
+
+    @variant dark {
+      background: var(--color-sky-700);
+      color: var(--color-white);
+    }
+
+    &:has(input[type="radio"]:checked) {
+      background: var(--color-amber-300);
+      color: var(--color-black);
+    }
+  }
+}
