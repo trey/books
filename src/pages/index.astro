@@ -22,7 +22,7 @@ const data = await response.json();
             ))}
         </ul>
         <div class="form-wrapper mt-10 flex justify-between items-stretch gap-2">
-            <input type="search" name="q" class="border-2 border-sky-300 dark:border-white text-black bg-white p-2 rounded-md grow" />
+            <input type="search" name="q" class="border-2 border-sky-300 dark:border-white text-black bg-white p-2 rounded-md grow">
             <button class="rounded-md bg-sky-500 hover:bg-sky-800 focus:bg-sky-800 dark:bg-sky-700 dark:hover:bg-sky-600 cursor-pointer text-white py-2 px-3">Search</button>
         </div>
     </form>
@@ -31,10 +31,10 @@ const data = await response.json();
         {data.map((item) => (
             <li>
                 {item.url
-                    ? <a href={item.url}>{item.name}</a>
+                    ? <a class="underline" href={item.url}>{item.name}</a>
                     : item.name
                 }
-                <form id={`form_${item.slug}`} action={item.action}>
+                <form class="space-y-6" id={`form_${item.slug}`} action={item.action}>
                     {item.slug === 'norwich' && (
                         <input type="hidden" name="searchtype" value="keyword">
                         <input type="hidden" name="qs_file" value="">
@@ -42,8 +42,8 @@ const data = await response.json();
                         <input type="hidden" name="using_sb" value="status">
                         <input type="hidden" name="qsb" value="keyword">
                     )}
-                    <input type="search" name={item.field ? item.field : "q"} />
-                    <button>Search</button>
+                    <input class="bg-white p-2" type="search" name={item.field ? item.field : "q"} required>
+                    <button class="bg-sky-600 hover:bg-sky-700 text-white p-2 cursor-pointer">Search</button>
                 </form>
             </li>
         ))}
