@@ -11,6 +11,11 @@ const data = await response.json();
 
 <Layout>
     <form class="js">
+        <div class="form-wrapper mb-10 flex justify-between items-stretch gap-2">
+            <input type="search" name="q" class="border-2 border-sky-300 dark:border-white text-black bg-white p-2 rounded-md grow">
+            <button class="rounded-md bg-sky-500 hover:bg-sky-800 focus:bg-sky-800 dark:bg-sky-700 dark:hover:bg-sky-600 cursor-pointer text-white py-2 px-3">Search</button>
+        </div>
+
         <ul class="space-y-2">
             {data.map((item) => (
                 <li>
@@ -21,10 +26,6 @@ const data = await response.json();
                 </li>
             ))}
         </ul>
-        <div class="form-wrapper mt-10 flex justify-between items-stretch gap-2">
-            <input type="search" name="q" class="border-2 border-sky-300 dark:border-white text-black bg-white p-2 rounded-md grow">
-            <button class="rounded-md bg-sky-500 hover:bg-sky-800 focus:bg-sky-800 dark:bg-sky-700 dark:hover:bg-sky-600 cursor-pointer text-white py-2 px-3">Search</button>
-        </div>
     </form>
 
     <ul class="no-js">
