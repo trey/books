@@ -48,6 +48,14 @@ import "../styles/global.css";
         ).value;
         const form = document.querySelector("#form_" + source);
         form.querySelector("input[type=search]").value = query;
+
+        if (source === "libby") {
+          // Instead of submitting the form, we need to redirect to the Libby URL
+          const escapedQuery = encodeURIComponent(query);
+          const libbyUrl = `https://libbyapp.com/search/nh/search/query-${escapedQuery}/page-1`;
+          window.location.href = libbyUrl;
+        }
+
         form.submit();
 
         // Save selected source and query in localStorage
