@@ -97,8 +97,8 @@ const data = await response.json();
             <input type="hidden" name="using_sb" value="status">
             <input type="hidden" name="qsb" value="keyword">
           )}
-          <input class="bg-white text-black p-2" type="search" name={item.field ? item.field : "q"} required>
-          <button class="bg-sky-600 hover:bg-sky-700 text-white p-2 cursor-pointer">Search</button>
+          <input class="bg-white text-black p-2" type="search" name={item.field ? item.field : "q"} required placeholder={item.slug === 'libby' ? 'JavaScript Required' : ''} disabled={item.slug === 'libby'}>
+          <button class="bg-sky-600 hover:bg-sky-700 text-white p-2 cursor-pointer" disabled={item.slug === 'libby'}>Search</button>
         </form>
       </li>
     ))}
