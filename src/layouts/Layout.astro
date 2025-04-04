@@ -11,58 +11,6 @@ import "../styles/global.css";
     <meta name="description" content="Search for books" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <script>
-      document.querySelector("html").classList.remove("no-js");
-      document.querySelector("html").classList.add("has-js");
-
-      // Restore selected source and query from localStorage
-      const selectedSource = localStorage.getItem("tp-selectedSource");
-
-      const urlParams = new URLSearchParams(window.location.search);
-      const q = urlParams.get("q");
-      const query = q ? q : localStorage.getItem("tp-query");
-
-      const radio = document.querySelector(
-        `input[name=source][value=${selectedSource}]`,
-      );
-      if (radio) {
-        radio.checked = true;
-      } else {
-        // Select the first option
-        document.querySelectorAll("input[name=source]")[0].checked = true;
-      }
-
-      const input = document.querySelector("input[name=q]");
-      if (input) {
-        input.value = query;
-      }
-
-      document.querySelector("form.js input[name=q]").focus();
-
-      document.querySelector("form.js").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const baseForm = e.target;
-        const query = baseForm.querySelector("input[name=q]").value;
-        const source = baseForm.querySelector(
-          "input[name=source]:checked",
-        ).value;
-        const form = document.querySelector("#form_" + source);
-        form.querySelector("input[type=search]").value = query;
-
-        // Save selected source and query in localStorage
-        localStorage.setItem("tp-selectedSource", source);
-        localStorage.setItem("tp-query", query);
-
-        if (source === "libby") {
-          // Instead of submitting the form, we need to redirect to the Libby URL
-          const escapedQuery = encodeURIComponent(query);
-          const libbyUrl = `https://libbyapp.com/search/nh/search/query-${escapedQuery}/page-1`;
-          window.location.href = libbyUrl;
-        } else {
-          form.submit();
-        }
-      });
-    </script>
   </head>
   <body class="bg-sky-100 dark:bg-sky-950 dark:text-sky-100 my-10">
     <div class="wrapper max-w-md mx-auto p-4">
