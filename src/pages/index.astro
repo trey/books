@@ -47,7 +47,7 @@ const data = await response.json();
 
     switch (source) {
       case "morrill":
-        const morrillUrl = form.querySelector("input[name=url]").value;
+        const morrillUrl = 'https://opac.libraryworld.com/opac/signin.php?libraryname=Morrill%20Memorial%20Library';
         window.location.href = `${morrillUrl}&term=${query}`;
         break;
       case "libby":
@@ -112,7 +112,6 @@ const data = await response.json();
                     item.name
                   )}
                   <form class="space-y-6" id={`form_${item.slug}`} action={item.action}>
-                    <input type="hidden" name="url" value={item.url}>
                     {item.slug === "norwich" && (
                       <>
                         <input type="hidden" name="searchtype" value="keyword">
@@ -122,8 +121,8 @@ const data = await response.json();
                         <input type="hidden" name="qsb" value="keyword">
                       </>
                     )}
-                    <input class="bg-white text-black p-2" type="search" name={item.field ? item.field : "q"} required placeholder={ item.slug === "libby" ? "JavaScript Required" : "" } disabled={item.slug === "libby"}>
-                    <button class="bg-sky-600 hover:bg-sky-700 text-white p-2 cursor-pointer" disabled={item.slug === "libby"}>Search</button>
+                    <input class="bg-white text-black p-2" type="search" name={item.field ? item.field : "q"} required placeholder={ (item.slug === "libby" || item.slug === 'morrill') ? "JavaScript Required" : "" } disabled={item.slug === "libby"}>
+                    <button class="bg-sky-600 hover:bg-sky-700 text-white p-2 cursor-pointer" disabled={(item.slug === "libby" || item.slug === 'morrill')}>Search</button>
                   </form>
                 </li>
               ))
