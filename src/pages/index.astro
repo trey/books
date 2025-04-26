@@ -62,10 +62,10 @@ const data = await response.json();
 </script>
 
 <Layout>
-  <form class="js">
-    <div class="form-wrapper mb-10 flex justify-between items-stretch gap-2">
+  <form class="js relative">
+    <div class="form-wrapper py-4 px-4 -mx-4 mb-10 flex justify-between items-stretch gap-2 sticky top-0 backdrop-blur">
       <input type="search" name="q" class="border-2 border-sky-300 dark:border-white text-black bg-white p-3 rounded-md grow text">
-      <button class="rounded-md bg-sky-500 hover:bg-sky-800 focus:bg-sky-800 dark:bg-sky-700 dark:hover:bg-sky-600 cursor-pointer text-white px-5">Search</button>
+      <button class="rounded-md bg-sky-500 hover:bg-sky-800 focus:bg-sky-800 dark:text-yellow-900 dark:bg-yellow-500 dark:hover:bg-yellow-400 cursor-pointer text-white px-5">Search</button>
     </div>
 
     <ul class="space-y-4">
@@ -91,8 +91,6 @@ const data = await response.json();
         ))
       }
     </ul>
-
-    <button class="block mt-10 w-full p-4 rounded-md bg-sky-500 hover:bg-sky-800 focus:bg-sky-800 dark:bg-sky-700 dark:hover:bg-sky-600 cursor-pointer text-white px-5">Search</button>
   </form>
 
   <ul class="no-js">
