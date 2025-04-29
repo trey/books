@@ -6,4 +6,4 @@ update:
   npm outdated
 
 dev:
-  npm run dev
+  ASTRO_TELEMETRY_DISABLED=1 npm run dev
